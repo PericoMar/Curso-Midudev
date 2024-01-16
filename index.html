@@ -1,3 +1,37 @@
+<!DOCTYPE html> <!-- Nodo para decirle al navegador que esta leyendo html (la mayoria de navegadores no lo necesitan) -->
+
+
+<head>
+<!-- Metadatos, no se va a renderizar y sirve para dar informacion a nuestra pagina -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>Portfolio @pedmargon</title> <!-- Importante para el SEO -->
+    <meta name="theme-colors" content="#9f0"> <!-- Cambia el color del borde de la ventana en algunos navegadores -->
+    <meta name="robots" content="index, follow">
+    <!-- Sugiere a los motores de búsqueda que indexen la página y sigan los enlaces en ella. 
+    Esto es común en la mayoría de las páginas web públicas, ya que se desea que el contenido sea descubierto, 
+    indexado y que los motores de búsqueda sigan los enlaces para explorar más contenido. -->
+
+    <!-- SEO -->
+    <!-- meta description es el texto que aparece debajo de el link a tu web en los buscadores
+    (algunas veces porque google a veces piensa que puede dar una descripcion mejor) -->
+    <meta name="description" content="Portfolio de @pedmargon programador junior con muchas ganas de aprender">
+
+    <!-- OPENGRAPH -->
+    <!-- IMPORTANTE opengraph xyz Pagina qeb para ver como se comparte tu pagina web. -->
+    <!-- Para cuando se comparte tu pagina -->
+    <meta property="org:title" content="Portfolio de @pedmargon">
+    <meta property="irg:image" content="images/perrito.jpg">
+    <meta property="irg:image:alt" content="Foto de un perrito">
+    <meta property="twitter:title" content="Disfruta desde twitter del protfolio de @pedmargon">
+
+    <!-- canonical sirve para marcar cual es la pagina principal de nuestra web -->
+    <link rel="canonical" href="https://pedmargon.dev">
+
+
+    <link rel="icon" type="image/jpg" href="images/perrito.jpg">
+</head>
+
 <!-- TODO MINUSCULAS -->
 
 <!-- h1 es la etiqueta y todo el conjunto "<h1>Portfolio de @pedmargon</h1>" es un elemento -->
@@ -13,9 +47,9 @@
 <!-- ul => Unordered list -->
 <ul>
     <!-- li => list item -->
-    <li>Pasar primero con Nuria</li>
-    <li>Curos de JS de OpenWebibinars</li>
-    <li>Proyectos personales</li>
+    <li class="list-item">Pasar primero con Nuria</li>
+    <li class="list-item">Curos de JS de OpenWebibinars</li>
+    <li class="list-item">Proyectos personales</li>
 </ul>
 
 <!-- Elementos reemplazables -->
@@ -31,6 +65,8 @@ title -> Sirve para cuando se hace hover en una imagen de informacion -->
  alt="perrito" 
  src="images/perrito.jpg" 
  alt="" title=perrito
- >
+>
 
+<!-- user agent stylesheet -->
+<!-- Son los estilos por defectos pque pone el navegador -->
 
