@@ -1,0 +1,104 @@
+/* Las reglas de css se ordenan en "cascada" */
+/* Se pueden sobreescribir algunas reglas de diseño poniendolas por debajo */
+
+/* lenguajecss.com */
+/* curso css google */
+
+/*
+selector {
+    propiedad : valor; --> declaracion
+} 
+*/
+
+
+/* estila todos los h1 */
+/* para la opacidad se usa rgb */
+h1 {
+    color :rgb(0 0 0 / 70%);
+    /* Para colores tambien se usa el hsl u oklch */
+    /* color : hsl(60 , 100% ,50%); */
+    /* color :oklch(343 70% 44% / 50%); */
+
+    /* Bordes */
+
+    /* border-width: 10px;
+    border-style: solid;
+    border-color: red; */
+}
+
+body {
+    background-color: rgb(224, 241, 255);
+    /* Importante tener fallbacks es decir font-families secundarias que cargun si no carga la primera */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* clases como selector */
+.link {
+    color:red;
+}
+
+/* id como selectores */
+/* No es buena practica estilar con ids porque no reutilizamos el css */
+#show{
+    background: #09f;
+    color:white;
+    border: 0;
+}
+
+.description{
+    border: red solid;
+}
+
+/* Herencia */
+/* Hay propiedades que son inherit por defecto como color*/
+/* Otras como border no */
+/* En MDN si buscamos la propiedad nos dice si se hereda o no */
+strong {
+    border : inherit;
+}
+
+/* pseudoclases */
+/* En las DevTools del navegador tenemos una opcion para
+simular los eventos y probar sus estilos */
+/* :hover cuando se pase el raton por encima */
+/* diferencia entre borde y contorno: */
+.link:hover {
+    border:3px solid #09f;
+}
+/* El outline no cambia el ancho del elemento el border si */
+/* Se nota como el border mueve el elemento y el outline no */
+.link-outline:hover{
+    outline: 3px solid red;
+}
+
+/* :active se activa justo cuando le hacemos click */
+.link:active{
+    outline: 3px solid black
+}
+
+/* :first-child (o last-child) solo el primer hijo del selector */
+/* Podemos poner un selector y otro separado por espacio para referirinos a los que esten dentro del otro */
+/* Hay que tener cuidado porque como podemos ver se aplica dos veces la opacidad al segundo nivel de la lista */
+ul li{
+    opacity: 0.7;
+}
+
+li:last-child{
+    color:purple;
+}
+
+/* Para seleccionar distintos elementos hay varios operadores: */
+ /* Operador > :  */
+ /* Se refiere a los hijos directos. Los que esten en un nivel mas bajo que el primero no */
+
+ /* Operador ~ : */
+/* Se refiere a los hermanos siguientes. NO a los anteriores */
+
+/* Operador + :  */
+/* Hermano inmediatamente despues */
+
+
+
+
+

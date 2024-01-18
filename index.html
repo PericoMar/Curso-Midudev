@@ -27,12 +27,8 @@
         <!-- canonical sirve para marcar cual es la pagina principal de nuestra web -->
         <link rel="canonical" href="https://pedmargon.dev">
         <link rel="icon" type="image/jpg" href="images/perrito.jpg">
+        <link rel="stylesheet" href="css/style.css">
 
-        <style>
-            * {
-                background-color: #c1f7ff;
-            }
-        </style>
     </head>
 
 
@@ -50,19 +46,19 @@
 
         <nav>
             <!-- anchor -> nos permite navegar -->
-            <a href="#experiencia">Experiencia</a>
-            <a href="#proyectos">Proyectos</a> <!-- enlaces internos -->
+            <a class="link" href="#experiencia">Experiencia</a>
+            <a class="link" href="#proyectos">Proyectos</a> <!-- enlaces internos -->
             <!-- #experiencia busca el id -->
 
             <!-- enlaces externos, al usarlos es importante que no se quite nuestra
             web por lo que usamos target="_blank" y rel="nonreferrer" por seguridad. -->
-            <a href="https://www.youtube.com/" target="_blank" rel="nonreferrer">Yotube</a> 
+            <a class="link" href="https://www.youtube.com/" target="_blank" rel="nonreferrer">Yotube</a> 
 
             <!-- Hay muchos tipos de anchors -->
-            <a href="mailto:pericomarytb@gmail.com">Enviame un correo</a>
-            <a href="tel:+34628198754">Llamame</a>
-            <a href="https://api.whatsapp.com/send?phone=15551234567">Send Message</a>
-            <a href="whatsapp://send?text=Hello World!&phone=+9198********1">Ping me on WhatsApp</a>
+            <a class="link" href="mailto:pericomarytb@gmail.com">Enviame un correo</a>
+            <a class="link-outline" href="tel:+34628198754">Llamame</a>
+            <a class="link-outline" href="https://api.whatsapp.com/send?phone=15551234567">Send Message</a>
+            <a class="link-outline" href="whatsapp://send?text=Hello World!&phone=+9198********1">Ping me on WhatsApp</a>
             <!-- donwload solo sirve para cosas dentro de nuestro servidor no cosas externas -->
             <a download href="images/perrito.jpg">
                 <img 
@@ -77,25 +73,25 @@
     </header>
 
     <!-- Tambien hay atributos : autoplay , loop , muted , src (imagen que sale antes de empezar el video) -->
-    <video controls src="https://www.youtube.com/watch?v=3nYLTiY5skU&list=PLz1LW3kcC5J4oETc1_0YePItxrEj0olvx&index=2&t=3022s&ab_channel=midulive"></video>
+    <!-- <video controls src="https://www.youtube.com/watch?v=3nYLTiY5skU&list=PLz1LW3kcC5J4oETc1_0YePItxrEj0olvx&index=2&t=3022s&ab_channel=midulive"></video> -->
 
     <!-- Etiqueta main SOLO PUEDE HABER UNA POR PAGINA -->
     <main>
 
-        <p>Programador aprendiz con experiencia en la programación gracias a el grado de
+        <p class="description">Programador aprendiz con experiencia en la programación gracias a el grado de
             <strong>Desarrollo de aplicaciones Web</strong>
         </p>
         <!-- iframe nos permite meter otra web dentro de nuestra web -->
         <!-- Hay algunas que no se pueden -->
         <!-- Y tu lo puedes evitar a traves de meta datos -->
-        <iframe 
+        <!-- <iframe 
         style="width:50%; aspect-ratio:16/9;"
         src="https://www.youtube.com/embed/3nYLTiY5skU?si=fAeC_k0k7MBwKXzM" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         allowfullscreen>
-        </iframe>
+        </iframe> -->
 
         <!-- Modales -->
         <!-- Se deben abrir con botones, aparecen por encima del contenido -->
@@ -125,6 +121,11 @@
         <ul>
             <!-- li => list item -->
             <li class="list-item">Pasar primero con Nuria</li>
+            <li>
+                <ul>
+                    <li>Aprendí mucho sobre Java, pero podria decir que me enseño a Programar de verdad</li>
+                </ul>
+            </li>
             <li class="list-item">Curos de JS de OpenWebibinars</li>
             <li class="list-item">Proyectos personales</li>
         </ul>
