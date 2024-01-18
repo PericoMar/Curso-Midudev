@@ -79,12 +79,12 @@
     <!-- Tambien hay atributos : autoplay , loop , muted , src (imagen que sale antes de empezar el video) -->
     <video controls src="https://www.youtube.com/watch?v=3nYLTiY5skU&list=PLz1LW3kcC5J4oETc1_0YePItxrEj0olvx&index=2&t=3022s&ab_channel=midulive"></video>
 
-    <p>Programador aprendiz con experiencia en la programación gracias a el grado de
-        <strong>Desarrollo de aplicaciones Web</strong>
-    </p>
-
     <!-- Etiqueta main SOLO PUEDE HABER UNA POR PAGINA -->
     <main>
+
+        <p>Programador aprendiz con experiencia en la programación gracias a el grado de
+            <strong>Desarrollo de aplicaciones Web</strong>
+        </p>
         <!-- iframe nos permite meter otra web dentro de nuestra web -->
         <!-- Hay algunas que no se pueden -->
         <!-- Y tu lo puedes evitar a traves de meta datos -->
@@ -96,6 +96,29 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         allowfullscreen>
         </iframe>
+
+        <!-- Modales -->
+        <!-- Se deben abrir con botones, aparecen por encima del contenido -->
+        <dialog id="dialog">
+            <h1>Abrir modales</h1>
+            <p>Totalmente nativo</p>
+            <button id="hide">Cerrar modal</button>
+        </dialog>
+
+        <button id="show">Ver modal</button>
+
+        <!-- Cuando ponemos un id a un elemento en HTML se nos crea un objeto en JS -->
+        <!-- dentro de window (hay que tener cuidado con el uso de id) -->
+        <script>
+            window.show.addEventListener("click" ,() => {
+                window.dialog.showModal();
+            })
+
+            window.hide.addEventListener("click" ,() => {
+                window.dialog.close();
+            })
+        </script>
+
         <h2 id="experiencia">Experiencia</h2>
 
         <!-- ul => Unordered list -->
@@ -231,7 +254,8 @@
 
                     <label for="prog">Que lenguaje de programacion quieres que trabaje</label>
                     <!-- Funciona como un select en el que puedes escribir y te va autocompletando -->
-                    <datalist>
+                    <input list="prog" name="leng-prog">
+                    <datalist id="prog">
                         <option value="JavaScript"></option>
                         <option value="Python"></option>
                         <option value="JQuery"></option>
