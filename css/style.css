@@ -100,5 +100,49 @@ li:last-child{
 
 
 
+/* Fallbacks */
+/* Se ponen dos propiedades iguales con valores distintos */
+/* por si uno no funciona tiene el otro  */
+p{
+    color:#09f;
+    /* Si no funciona el oklch se usara el hexadecimal */
+    color:oklch(40.1% 0.123 21.57);
+}
+
+/* Especificidad */
+/* CSS le da prioridad a las declaraciones que esten dentro del selector mas especifico,
+en el siguiente orden -> 
+    1.- ID
+    2.- Clases
+    3.- Elementos o pseudoelementos
+Si se empata en algun nivel superior se fija en el resto de selectores (p.e: p #text < .parrafo #text) */
+/* Más especificico aún son estilos en linea es decir ponerselo como atributo al propio elemento html (poco usados o para cosas dinamicas)*/
+/* Para saltarse la especificidad se puede saltar la palabra !important y usará el estilo de que tenga el !important (no se debe usar -> smell)*/
+
+
+/* Unidades */
+.img{
+    /* Porcentajes  */
+    /* Porcentaje relativo al contenido */
+    /* Tenemos relativas al wiew-port: que es el area que vemos */
+    /* El view-port toma la altura de lo que se ve p.e: 1000px pero si tiene margen u otra propiedad seguira siendo 1000px */
+    /* Lo que hace que si tenemos margen y ponemos 100vh nos dara un scroll */
+    height: 50vh; /* view-port-height */
+    width:50vw; /*view-port-width */
+}
+
+/* Modelo de la caja */
+/* Tenemos elementos por defecto que son display inline (en linea) */
+/* Son normalmente texto como span, strong, em, pero NO otras como h1 o p */
+/* No se les puede aplicar un width y heigth */
+/* Aparecen en la misma linea uno detras de otro */
+
+/* Tambien tenemos los bloques como div o section */
+/* Que tiene un display block */
+/* Y que funcionan como bloques, se ponen uno debajo de otro y */
+/* si se le pueden aplicar estilos de width y height */
+
+
+
 
 
