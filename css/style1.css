@@ -142,7 +142,24 @@ Si se empata en algun nivel superior se fija en el resto de selectores (p.e: p #
 /* Y que funcionan como bloques, se ponen uno debajo de otro y */
 /* si se le pueden aplicar estilos de width y height */
 
+/* Margin, padding y border */
+/* Margin es el margen que tiene el elemento con el resto */
+/* El padding es la separacion entre el contenido y el container */
+/* es decir que la caja aumenta de tamaño (p.e: si tiene un width:100px y un padding:0px 20px el contenedor */
+/* en total ocupará 140px) */
+/* El border tambien añade tamaño a la caja */
+/* Y es el envoltorio del contenido (contenido + padding) */
+/* border: 10px solid red; añadira 20px de tamaño al contenedor */
+/* En las dev tools con el selector de elementos si nos ponemos encima del elemento nos dice el tamaño en total */
 
+/* BOX-SIZING */
+/* Este funcionamiento de ir añadiendo tamaño segun el padding y el margin se puede cambiar */
+/* gracias a la propiedad box-sizing, la cual por defecto tiene como valor content-box,pero */
+/* si le cambiamos el valor a border-box el width que le pondramos sera la suma del padding border y contenido */
+/* por lo que el contenido se adaptará */
 
+.img{
+    border:10px solid red;
+}
 
 
