@@ -1,0 +1,35 @@
+/* Modelo de la caja */
+/* Recordamos que el tamaño es el Width o Height + padding + border. */
+/* Siempre que usemos box-sizing:content-box; en vez de box-sinzing:border-box; */
+body{
+    background-color: #09f;
+}
+.container{
+    width:100px;
+    height:100px;
+    padding:10px;
+    border: 10px solid red;
+    background-color: white;
+    box-sizing:border-box;
+}
+
+/* Desbordamiento */
+/* Cuando tenemos un contenedor con tamaño fijo puede ser que */
+/* el contenido se desborde */
+/* Por defecto el contenido funciona como overflow:visible; */
+.desbordamiento{
+    width:150px;
+    height:150px;
+    padding:10px;
+    background-color: white;
+    box-sizing:border-box;
+    font-size: 48px;
+    /* overflow:hidden; */
+    /* No se muestra el contenido desbordado */
+    /* overflow:scroll; */
+    /* Se muestra el contenido con una barra de desplazamiento */
+    /* overflow:auto; */
+    /* La version "mejorada" de scroll */
+    /* Determina si tiene que mostrar las barras y las muestra o no */
+    /* La barra del scroll se puede estilar */ 
+}
