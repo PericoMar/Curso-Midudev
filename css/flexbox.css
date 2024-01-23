@@ -33,3 +33,48 @@ body{
     /* Determina si tiene que mostrar las barras y las muestra o no */
     /* La barra del scroll se puede estilar */ 
 }
+
+.position{
+    width: 400px;
+    height: 400px;
+    border:10px solid black;
+    margin-top: 50px;
+    position:relative;
+}
+
+/* Con position absolute podemos colocar un elemento donde queramos del documento */
+/* Con top, left right y bottom indicandole la posicion */
+/* Si queremos hacerlo respecto a otro elemento tenemos que usar position relative pero en el contenedor*/
+
+.absolute{
+    position:absolute;
+    top:0;
+    right: 0;;
+}
+
+/* Tambien hay position fixed que funciona como el absolute pero */
+/* no se mueve al hacer scroll, se queda fijo en pantalla. Las coordenadas que le pongamos son */
+/* relativas a la pantalla */
+/* Puede ser util para un globo de whatsapp o un chat de ayuda */
+
+.fixed{
+    position: fixed;
+    top : 0;
+    right: 0;
+    bottom:0;
+    left:0;
+    margin:auto;
+    /* Así se puede centrar un div pero no tiene sentido, tendria sentido para centrar */
+    /* Un modal o dialog */
+}
+
+/* Position Sticky, no se queda fijo en pantalla, sino se queda pegado en pantalla. */
+/* Va a intentar siempre quedarse dentro del container (que sea relative) al que pertenezca */
+/* IMPORTANTE PONERLE CORDENADAS CON top, bottom, right o left, sino no funciona */
+.sticky{
+    position: sticky;
+    top:0;
+    right:0;
+}
+
+

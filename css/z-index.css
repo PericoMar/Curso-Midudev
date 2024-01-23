@@ -1,0 +1,36 @@
+/* z-index */
+/* En las webs todo se ve en 2D pero en realidad hay tres dimensiones */
+/* Hay muchas propiedades que cambian el z-index. */
+/* En MDN hay una lista con contextos de apilamiento */
+/* https://developer.mozilla.org/es/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context */
+/* Para poder usar z-index hay que crear un contexto de apilamiento */
+/* p.e con position relative */
+
+.zindex{
+    margin-top : 200px;
+}
+
+.caja{
+    border : 1px solid;
+    opacity: .9;
+    width: 200px;
+    height: 200px;
+    background:#09f;
+    margin-top:-100px;
+    box-shadow:0 0 5px #000000;
+    /* PROBAR A QUITAR POSITION:RELATIVE */
+    position:relative;
+}
+
+.caja:first-child{
+    background-color: yellow;
+    z-index:2;
+}
+
+div:nth-child(2){
+    z-index:3;
+}
+
+.caja:last-child{
+    background-color: red;
+}
