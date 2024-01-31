@@ -1,0 +1,107 @@
+
+/* display:inline se comporta como si tuvieramos texto. */
+/* Siguiendo la linea del texto, uno detras de otro. NO afecta el width y height */
+
+.inline{
+    border : 1px solid;
+    opacity: .9;
+    width: 200px;
+    height: 200px;
+    background:#09f;
+    display:inline;
+}
+
+.inline:first-child{
+    background-color: yellow;
+}
+
+
+.inline:last-child{
+    background-color: red;
+}
+
+/* display:flex establece como tiene que funcionar el contendor */
+/* respecto a sus hijos. Tenemos un contendor flexible */
+/* Flex es unidreccional, ya sea filas o columnas (diferencia con GRID)*/
+/* Con GRID tenemos una cuadricula */
+/* Flex ajusta el contenido tanto al direction:rtl (right to left) o writing-mode: vertical-lr; */
+
+.flex-parent{
+    border : 5px solid #000;
+    display:flex;
+    /* Esta apilando todos sus hijos en columnas */
+    flex-direction: row; /* <-- EJE PRINCIPAL */
+    width: 100%;
+    height :800px;
+
+    /* Por defecto no va a cambiar de linea o cualquier otra cosa */
+    /* sino que va a meter los hijos en su contenedor pase lo que pase */
+    flex-wrap:nowrap;
+    /* nowrap: Cada elemento se ajusta en una sola línea. */
+    /* wrap: los elementos se envuelven alrededor de líneas adicionales. */
+
+    /* El flex-direction y el flex wrap se puede abreviar con flex-flow:row nowrap; */
+
+    /* Como distribuimos el contenido en el EJE PRINCIPAL depende del justify-content */
+    justify-content: center;
+    /* justify-content : space-around; */
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
+
+    /* Si quiero centrarlo pero quiero separarlos un poco. */
+    /* Puedo usar gap, que es el huevo entre contenedores no entre los laterales */
+    gap:32px;
+
+    /* Alinea los elementos en el eje cruzado */
+    align-items:center;
+
+    /* Puedes usar align-content para establecer como múltiples líneas están separadas una de otra. Esta propiedad acepta los siguientes valores: */
+
+    /* flex-start: Las líneas se posicionan en la parte superior del contenedor. */
+    /* flex-end: Las líneas se posicionan en la parte inferior del contenedor. */
+    /* center: Las líneas se posicionan en el centro (verticalmente hablando) del contenedor. */
+    /* space-between: Las líneas se muestran con la misma distancia entre ellas. */
+    /* space-around: Las líneas se muestran con la misma separación alrededor de ellas. */
+    /* stretch: Las líneas se estiran para ajustarse al contenedor. */
+    /* Esto puede ser confuso, pero align-content determina el espacio entre las líneas, mientras que align-items determina como los elementos en su conjunto están alineados dentro del contenedor. Cuando hay solo una línea, align-content no tiene efecto. */
+    align-content:center;
+}
+
+.flex{
+    border : 1px solid;
+    opacity: .9;
+    width: 200px;
+    height: 200px;
+    background:#09f;
+
+    /* Sin embargo si usamos flex:wrap si que puede saltar de linea si se pasa del contenido */
+    flex-grow: 0; /* los elementos NO crecen (0 NO, 1 SI)*/
+    flex-shrink: 0; /* (0 NO, 1 SI) los elementos pueden reducir su tamaño a uno más pequeño que su flex-basis */
+    /* que por defecto es flex-basis:auto; */
+    flex-basis:auto;
+
+    /* flex:auto; */
+    /* El contenedor se adapta al contenido */
+
+    /* flex:1; */
+    /* Los elementos pueden crecer y reducir su tamaño y su contenido es indiferente (flex-basis:0;) */
+
+}
+
+.flex:first-child{
+    background-color: yellow;
+
+    /* Este hijo ocupa x4 veces del elemento que ocupe 1 (flex:1)*/
+    /* flex:4; */
+
+    /* Puedo cambiar el orden el que aparecen los elementos */
+    order:3;
+
+    /* Puedo decidir dentro de cada hijo como se alinea por separado con: */
+    align-self: flex-end;
+}
+
+
+.flex:last-child{
+    background-color: red;
+}
