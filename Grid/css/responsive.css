@@ -1,0 +1,18 @@
+div{
+    display:grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(200px, 1fr)
+    );
+    gap: 16px;
+    margin: 0  auto;
+    max-width: 800px;
+}
+
+/* Para hacer que sea responsive podemos usar media querys pero con grid es más facil */
+
+img{
+    width: 100%;
+    margin : auto;
+    border-radius: 10px;
+}
