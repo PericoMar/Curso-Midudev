@@ -1,51 +1,82 @@
 .pulser{
-    width:30px;
-    height: 30px;
-    background: #09f;
+    width: 50px;
+    height: 50px;
+    background-color: lightblue;
     border-radius: 50%;
-    position:relative;
-    transition-duration: 0.3s;
-    transition-property: background , scale;
-    /* Como se anima la transición */
-    /* linear -> lineal
-    ease-in -> lento al principio
-    ease-out -> lento al final
-    ease-in-out -> lento al principio y al final
-    ease -> parecido al in-out
-    función steps -> define cuantos pasos debe dar la animación
-    cubic-bezier(x1, y1, x2, y2) -> puedes personalizar la curva bezier de la animación
-    en las devTools puedes ver la animación que tienes.*/
-    transition-timing-function: ease-in-out;
-    /* Le podemos poner un delay a la transición */
-    transition-delay: 200ms;
-    /* Se puede animar una propiedad y otra de otra con el transition:
-    transition: 
-        background 300ms linear,
-        scale 500ms ease-in-out,
-        box-shadow 1s ease; */
+    position :relative;
 }
 
-/* gracias es esta media query podemos hacer que los usuarios con
-las animaciones desactivadas no las vean (por si se marean, etc..) */
+.pulser::after{
+    content: '';
+    position:absolute;
+    width:100%;
+    height: 100%;
+    top : 0;
+    left: 0;
+    background-color: lightblue;
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    /* animation-direction: alternate; */
+    /* Las animaciones se pueden pausar */
+    /* animation-play-state: paused; */
 
-@media (prefers-reduced-motion : reduce){
-    .pulser {
-        transition: none;
+}
+
+img{
+    margin: 20px 0px;
+    width: 100px;
+    height: 100px;
+    animation-name: mover;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+
+    animation: mover 2s ease-in-out 0s 2 alternate both;
+}
+
+img:hover{
+    animation-play-state: paused;
+    cursor:pointer;
+}
+
+@keyframes mover {
+    to{
+        transform: translateX(200px);
     }
 }
 
-.pulser:hover{
-    /* El scale hace que el espacio que ocupa sea el mismo pero visualmente aumenta */
-    scale: 3;
-    background-color: purple;
-    box-shadow: 0 0 10px purple;
-    /* Es interesante dentro del hover meterle una duración de transición
-    mayor: */
-    transition-duration:0.5s;
+@keyframes pulse{
+    0%{
+        scale: 1;
+    }
+
+    50%{
+        scale: 1.5;
+        opacity: 50%;
+    }
+
+    100%{
+        scale: 1;
+        opacity: 50%;
+    }
 }
 
-body{
-    display:grid;
+/* @keyframes move {
+    from {
+        transform: translateY(-100px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+} */
+
+body {
+    display: grid;
     place-content: center;
-    min-height: 50vh;
+    height: 100vh;
 }

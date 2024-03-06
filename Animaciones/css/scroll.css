@@ -1,0 +1,48 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    margin: 0;
+}
+
+header{
+    margin:0;
+    background-color: azure;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+main{
+    margin:0px 20px;
+}
+
+#progreso{
+    position: fixed;
+    top : 0;
+    width: 100%;
+    background-color: red;
+    height: 1em;
+    animation-name: progress-grow;
+    animation-duration: auto;
+    animation-timing-function: linear;
+    animation-timeline: scroll();
+}
+
+@keyframes progress-grow{
+    from {
+        width: 0%;
+    }
+
+    to{
+        width: 100%;
+    }
+}
+
+header nav ul{
+    list-style: none;
+    display:flex;
+    width: 500px;
+    justify-content: space-around;
+    align-items: center;
+}
